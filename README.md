@@ -1,1 +1,1 @@
-"# SF_Python-Basics" 
+Задания по теме "Основы Python"  
