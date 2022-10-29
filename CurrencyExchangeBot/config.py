@@ -1,7 +1,7 @@
 import time
 
 class Backyard:
-    TOKEN = 'сюда пропишите свой токен'
+    TOKEN = '5530983647:AAHEdM8zSltLVOQXddBCFVcXxtojgZbAy60'
 
     URL = 'https://min-api.cryptocompare.com/data/price?'
 
