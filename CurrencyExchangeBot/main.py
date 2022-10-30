@@ -7,12 +7,12 @@ bot = telebot.TeleBot(by.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, by.TEXT_HELLO)
+    bot.send_message(message.chat.id, by.TEXT_HELLO, parse_mode="html")
 
 
 @bot.message_handler(commands=['help', 'помощь', '?'])
 def help(message):
-    bot.send_message(message.chat.id, by.TEXT_HELP)
+    bot.send_message(message.chat.id, by.TEXT_HELP, parse_mode="html")
 
 
 @bot.message_handler(commands=['BOT'])
@@ -56,9 +56,9 @@ def convert(message):
         bot.reply_to(message, f'Неправильный ввод данных')
     else:
         rate, sum_money = API.get_price(base, quote, amount)
-        text = f'По состоянию на сегодня, {by.date},\nкурс составил:  {rate} ' \
+        text = f'По состоянию на сегодня, <i>{by.date}</i>,\nкурс составил:  {rate} ' \
                f'{by.KEYS[base][0].lower()}\n{"_" * 40}\n{amount} {by.KEYS[quote][0].lower()}' \
-               f' = {round(float(sum_money), 2)} {by.KEYS[base][0].lower()}'
-        bot.send_message(message.chat.id, text)
+               f' = <b>{round(float(sum_money), 2)}</b> {by.KEYS[base][0].lower()}'
+        bot.send_message(message.chat.id, text, parse_mode="html")
 
 bot.polling(none_stop=True)
