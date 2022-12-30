@@ -1,7 +1,8 @@
 import time
 
 class Backyard:
-    TOKEN = '5530983647:AAHEdM8zSltLVOQXddBCFVcXxtojgZbAy60'
+    # Вместо BOT TOKEN HERE нужно вставить токен вашего бота, полученный у @BotFather
+    TOKEN = 'BOT TOKEN HERE'
 
     URL = 'https://min-api.cryptocompare.com/data/price?'
 
